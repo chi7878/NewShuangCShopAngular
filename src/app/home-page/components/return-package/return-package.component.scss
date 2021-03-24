@@ -1,0 +1,45 @@
+@import '../../../shared.scss';
+
+.return {
+    padding-bottom: 80px;
+
+    &-banner {
+        background-image: url('../../../../assets/images/banner/return-banner.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        width: 95%;
+        height: 400px;
+        margin-left: auto;
+        border-bottom-left-radius: 48px;
+        margin-bottom: 60px;
+        display: flex;
+        align-items: flex-end;
+        padding-left: 40px;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+
+        &__title {
+            @include fontStyle(32px, 300, #0a5353);
+            line-height: 38px;
+            background-color: #ffffff90;
+            padding: 10px 30px;
+            border-radius: 8px;
+        }
+    }
+
+    &-title {
+        @include fontStyle(20px, 500);
+        letter-spacing: 5px;
+        line-height: 45px;
+        padding: 0 80px;
+    }
+
+    &-text {
+        @include fontStyle(16px, 300);
+        letter-spacing: 5px;
+        line-height: 45px;
+        padding: 0 80px;
+        margin-bottom: 20px;
+    }
+}

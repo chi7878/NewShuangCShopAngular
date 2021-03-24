@@ -1,0 +1,58 @@
+<div class="info" [formGroup]="formData">
+    <div class="info-box info-pay">
+        <p class="info-box__title">信用卡資料</p>
+        <mat-form-field class="info-input" floatLabel="always">
+            <mat-label>卡片號碼</mat-label>
+            <input type="text" matInput formControlName="cardNumber" placeholder="∗∗∗∗-∗∗∗∗-∗∗∗∗-∗∗∗∗" required>
+            <mat-error *ngIf="formData.get('cardNumber').hasError('required')">請輸入名稱</mat-error>
+            <mat-error *ngIf="formData.get('cardNumber').hasError('maxlength')">卡片號碼最多19字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="cardCVC" placeholder="安全碼" required>
+            <mat-error *ngIf="formData.get('cardCVC').hasError('required')">請輸入安全碼</mat-error>
+            <mat-error *ngIf="formData.get('cardCVC').hasError('maxlength')">安全碼最多3字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <mat-label>有效日期</mat-label>
+            <input type="text" matInput formControlName="cardDate" placeholder="yy/mm" required>
+            <mat-error *ngIf="formData.get('cardDate').hasError('required')">請輸入有效日期</mat-error>
+            <mat-error *ngIf="formData.get('cardDate').hasError('maxlength')">有效日期最多5字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="cardName" placeholder="持卡人姓名" required>
+            <mat-error *ngIf="formData.get('cardName').hasError('required')">請輸入持卡人姓名</mat-error>
+            <mat-error *ngIf="formData.get('cardName').hasError('maxlength')">持卡人姓名最多50字</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="info-box info-customer">
+        <p class="info-box__title">個人資料</p>
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="name" placeholder="姓名" required>
+            <mat-error *ngIf="formData.get('name').hasError('required')">請輸入姓名</mat-error>
+            <mat-error *ngIf="formData.get('name').hasError('maxlength')">姓名最多50字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="phone" placeholder="電話" required>
+            <mat-error *ngIf="formData.get('phone').hasError('required')">請輸入電話</mat-error>
+            <mat-error *ngIf="formData.get('phone').hasError('maxlength')">電話最多10字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="mail" placeholder="Email" required>
+            <mat-error *ngIf="formData.get('mail').hasError('required')">請輸入Email</mat-error>
+            <mat-error *ngIf="formData.get('mail').hasError('maxlength')">Email最多200字</mat-error>
+        </mat-form-field> 
+        <mat-form-field class="info-input" floatLabel="always">
+            <input type="text" matInput formControlName="address" placeholder="收件地址" required>
+            <mat-error *ngIf="formData.get('address').hasError('required')">請輸入收件地址</mat-error>
+            <mat-error *ngIf="formData.get('address').hasError('maxlength')">收件地址最多200字</mat-error>
+        </mat-form-field>
+        <mat-form-field class="info-input" floatLabel="always">
+            <textarea matInput formControlName="message" placeholder="留言"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="info-btns">
+        <p class="info-btn" (click)="prev()">上一步</p>
+        <p class="info-btn" [class.info-btn_null]="showFinish()" (click)="next()">完成訂單</p>
+    </div>
+    <app-loading-page [title]="'建立訂單中...'" *ngIf="isLoaded"></app-loading-page>
+</div>

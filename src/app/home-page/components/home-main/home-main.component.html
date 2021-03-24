@@ -1,0 +1,86 @@
+<div class="main">
+  <div class="main-banner">
+    <p class="main-banner__title">科技 /</p>
+    <p  class="main-banner__title">讓生活無限可能</p>
+    <div class="main-banner__button" (click)="goProducts()">
+      <p class="main-banner__button-text">MORE</p>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-content__hot">
+      <p class="main-content__title">人氣商品</p>
+      <p class="main-content__small-title">POPULAR PRODUCTS</p>
+      <ul class="main-content__hot-list">
+        <li class="main-content__hot-item" (click)="goProduct('-Lk-WIpIRljnO_DU5rJV')">
+          <div class="main-content__hot-img">
+            <img src="./assets/images/product/iphone-12-pro-max.jpg" alt="">
+          </div>
+          <p class="main-content__hot-text">APPLE IPhone 12 Pro Max</p>
+        </li>
+        <li class="main-content__hot-item" (click)="goProduct('-Li3ug7PpOXsVMUzfJHo')">
+          <div class="main-content__hot-img">
+            <img src="./assets/images/product/air-pods-pro.jpg" alt="">
+          </div>
+          <p class="main-content__hot-text">APPLE AirPods Pro</p>
+        </li>
+        <li class="main-content__hot-item" (click)="goProduct('-Lk-Wg4eNwBAkuV7bE2J')">
+          <div class="main-content__hot-img">
+            <img src="./assets/images/product/S21.jpg" alt="">
+          </div>
+          <p class="main-content__hot-text">SAMSUNG Galaxy S21 Ultra</p>
+        </li>
+        <li class="main-content__hot-item" (click)="goProduct('-Ljylaq-HYasQjdq0jy2')">
+          <div class="main-content__hot-img">
+            <img src="./assets/images/product/google-nest-audio.jpg" alt="">
+          </div>
+          <p class="main-content__hot-text">Google Nest Audio</p>
+        </li>
+      </ul>
+    </div>
+    <div class="main-content__class">
+      <p class="main-content__title">商品分類</p>
+      <p class="main-content__small-title">PRODUCT CATEGORY</p>
+      <ul class="main-content__class-list">
+        <li class="main-content__class-item" (click)="goClass('手機')">
+          <p class="main-content__class-title">手機</p>
+        </li>
+        <li class="main-content__class-item" (click)="goClass('配件')">
+          <p class="main-content__class-title">智慧穿戴</p>
+        </li>
+        <li class="main-content__class-item" (click)="goClass('穿戴')">
+          <p class="main-content__class-title">周邊</p>
+        </li>
+        <li class="main-content__class-item" (click)="goClass('生活')">
+          <p class="main-content__class-title">智能生活</p>
+        </li>
+      </ul>
+    </div>
+    <div class="main-content__discount">
+      <p class="main-content__discount-title">特色</p>
+      <p class="main-content__discount-small-title">Feature</p>
+      <div class="main-content__discount-box">
+        <div class="main-content__discount-content">
+          <img [src]="'./assets/images/illustration/' + featureList[activeFeatureTab]['img'] + '.png'" alt="">
+        </div>
+        <div class="main-content__discount-content">
+          <p class="main-content__discount-content-title">{{featureList[activeFeatureTab]['title']}}</p>
+          <p class="main-content__discount-content-text">{{featureList[activeFeatureTab]['text']}}</p>
+        </div>
+        <p class="main-content__discount-btn main-content__discount-btn_prev" (click)="changeFeature('prev')">PREV</p>
+        <p class="main-content__discount-btn main-content__discount-btn_next" (click)="changeFeature('next')">NEXT</p>
+      </div>
+    </div>
+    <div class="main-content__activity">
+      <div class="main-content__activity-box">
+        <p class="main-content__activity-title">想搶先知道最新商品與最新活動嗎?</p>
+        <div class="main-content__activity-input-box">
+          <input class="main-content__activity-input" type="text">
+          <i class="far fa-paper-plane"></i>
+        </div>
+      </div>
+      <div class="main-content__activity-box">
+        <img src="./assets/images/illustration/undraw-Mailbox-re-dvds.png" width="100%" alt="">
+      </div>
+    </div>
+  </div>
+</div>

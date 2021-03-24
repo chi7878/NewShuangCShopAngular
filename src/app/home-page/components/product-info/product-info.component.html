@@ -1,0 +1,28 @@
+<div class="info">
+    <div class="info-box">
+        <img [src]="productInfo['imageUrl']" alt="">    
+    </div>
+    <div class="info-box">
+        <div class="info-content">
+            <p class="info-box__title">{{productInfo['title']}}</p>
+            <p class="info-box__tag">{{productInfo['category']}}</p>
+            <div class="info-box__feature">
+                <p class="info-box__feature-title">特色-</p>
+                <p class="info-box__feature-text">{{productInfo['description']}}</p>
+            </div>
+            <p class="info-box__price-original">建議售價 NT${{productInfo['origin_price']}}</p>
+            <p class="info-box__price-sale">NT${{productInfo['price']}}</p>
+            <div class="info-box__num-box">
+                <i class="fas fa-minus" [class.info-box__add-null]="num === 1" (click)="changeNum('prev')"></i>
+                <p class="info-box__num">{{num}}</p>
+                <i class="fas fa-plus" [class.info-box__add-null]="num === allNum" (click)="changeNum('next')"></i>
+            </div>
+            <div class="info-box__btns">
+                <p class="info-box__btn" (click)="addCart()">加入購物車</p>
+                <p class="info-box__btn" (click)="addCart(true)">直接購買</p>
+            </div>
+        </div>
+    </div>
+    <i class="info-back fas fa-chevron-left" (click)="backPage()"></i>
+    <app-loading-page *ngIf="isLoaded"></app-loading-page>
+</div>

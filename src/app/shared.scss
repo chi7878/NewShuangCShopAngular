@@ -1,0 +1,18 @@
+
+
+/*
+* 文字style
+*/
+@mixin fontStyle($size, $fontWidth, $color : #4b4b4b, $isOverFlowed : false) {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: $size;
+    font-weight: $fontWidth;
+    color: $color;
+
+    @if $isOverFlowed {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+

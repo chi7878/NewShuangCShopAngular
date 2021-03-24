@@ -1,0 +1,32 @@
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    background: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    min-height: 700px;
+}
+
+.right-box {
+    margin-left: 30px;
+    width: calc(100% - 200px);
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .right-box {
+        width: calc(100% - 130px);
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .right-box {
+        margin-top: 30px;
+        margin-left: 0;
+        width: 100%;
+    }
+}

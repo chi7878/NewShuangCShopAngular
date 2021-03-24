@@ -1,0 +1,174 @@
+@import '../../../shared.scss';
+
+.header {
+    width: 100%;
+
+    &-title-box {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #c8c8c8;
+
+        &__title {
+            @include fontStyle(35px, 700, #4b4b4b);
+            line-height: 40px;
+            margin-right: 20px;
+        }
+
+        &__nav {
+            width: 120px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            border-radius: 500px;
+            background-color: #fff;
+            box-shadow: 0 0 20px #00000030;
+        }
+
+        &__icon-box {
+            width: 35px;
+            height: 35px;
+            background-color: #abd1c6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__text {
+            @include fontStyle(20px, 300);
+            margin-left: 10px;
+        }
+    }
+
+    &-info {
+        &__list {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        &__item {
+            position: relative;
+            width: 200px;
+            height: 85px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 20px #00000030;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 15px;
+            }
+            
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+
+            &:nth-child(1)::before {
+                background-color: #009385;
+            }
+
+            &:nth-child(2)::before {
+                background-color: #f9bc60;
+            }
+
+            &:nth-child(3)::before {
+                background-color: #e16162;
+            }
+
+            &:nth-child(4)::before {
+                background-color: #abd1c6;
+            }
+        }
+
+        &__num {
+            @include fontStyle(35px, 500, #4b4b4b, true);
+            width: 90%;
+            text-align: right;
+            line-height: 40px;
+        }
+
+        &__text {
+            @include fontStyle(16px, 300, #605f5f);
+        }
+    }
+}
+
+.nav-icon {
+    font-size: 20px;
+    color: #4b4b4b;
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .header {
+        &-info {
+            &__list {
+                flex-wrap: wrap;
+            }
+
+            &__item {
+                height: 57px;
+                padding: 5px 10px;
+                margin-right: 0;
+                margin-bottom: 10px;
+                justify-content: space-around;
+            }
+
+            &__num {
+                font-size: 20px;
+                line-height: 24px;
+            }
+            &__text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .header {
+        &-title-box {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &__title {
+                margin-bottom: 10px;
+            } 
+        }
+
+        &-info {
+            &__list {
+                flex-wrap: wrap;
+            }
+
+            &__item {
+                height: 57px;
+                padding: 5px 10px;
+                margin-right: 0;
+                margin-bottom: 10px;
+                justify-content: space-around;
+            }
+
+            &__num {
+                font-size: 20px;
+                line-height: 24px;
+            }
+            &__text {
+                font-size: 14px;
+            }
+        }
+    }
+}

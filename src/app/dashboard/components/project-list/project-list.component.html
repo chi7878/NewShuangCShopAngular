@@ -1,0 +1,60 @@
+<div class="project-list">
+    <div class="project-list__new-box" matTooltip="新增商品" matTooltipPosition="above"  (click)="openNewProduct()">
+        <i class="new-icon fas fa-plus-circle"></i>
+        <p class="project-list__new-text">新增商品</p>
+    </div>
+    <div class="project-list__list-box">
+        <perfect-scrollbar  class="project-list__list-scrollbar ps-show-always" [config]="{suppressScrollX : false, suppressScrollY : true}">
+            <ul class="project-list__list project-list__list_header">
+                <li class="project-list__item">
+                    <p class="project-list__text">分類</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">名稱</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">原價</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">售價</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">是否啟用</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">編輯</p>
+                </li>
+                <li class="project-list__item">
+                    <p class="project-list__text">刪除</p>
+                </li>
+            </ul>
+            <div class="project-list__scrollbar-box">
+                <perfect-scrollbar  class="project-list__scrollbar ps-show-always">
+                    <ul class="project-list__list" *ngFor="let product of productList">
+                        <li class="project-list__item">
+                            <p class="project-list__text">{{product['category']}}</p>
+                        </li>
+                        <li class="project-list__item">
+                            <p class="project-list__text">{{product['title']}}</p>
+                        </li>
+                        <li class="project-list__item">
+                            <p class="project-list__text">NT${{product['origin_price'] | number: '1.'}}</p>
+                        </li>
+                        <li class="project-list__item">
+                            <p class="project-list__text">NT${{product['price'] | number: '1.'}}</p>
+                        </li>
+                        <li class="project-list__item">
+                            <mat-slide-toggle color="primary" [(ngModel)]="product['is_enabled']" (click)="toggleOpened(product['is_enabled'], product['id'])"></mat-slide-toggle>
+                        </li>
+                        <li class="project-list__item">
+                            <i class="icon-edit fas fa-pencil-alt" (click)="editProduct(product)"></i>            
+                        </li>
+                        <li class="project-list__item">
+                            <i class="far fa-trash-alt" (click)="deleteProduct(product['id'])"></i>           
+                        </li>
+                    </ul>
+                </perfect-scrollbar>
+            </div>
+        </perfect-scrollbar>
+    </div>
+</div>

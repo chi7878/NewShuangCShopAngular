@@ -1,0 +1,180 @@
+@import '../../../shared.scss';
+
+.check {
+    width: 40%;
+    margin: 20px auto;
+
+    &-item {
+        width: 100%;
+        height: 80px;
+        display: flex;
+
+
+        &__img {
+            width: 20%;
+            position: relative;
+            overflow: hidden;
+            
+            &> img {
+                height: 120%;
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &__info {
+            width: 50%;
+            padding: 10px 5px;
+            box-sizing: border-box;
+        }
+
+        &__price {
+            width: 25%;
+            @include fontStyle(18px, 300, #4b4b4b, true);
+            text-align: center;
+            line-height: 80px;
+        }
+
+        & > i {
+            width: 5%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 80px;
+            color: #c8c8c8;
+            cursor: pointer;
+
+            &:hover {
+                color: #0A5353;
+            }
+        }
+
+        &__title {
+            @include fontStyle(16px, 300, #0A5353, true);
+            line-height: 21px;
+        }
+
+        &__num {
+            @include fontStyle(14px, 300);
+            margin-top: 10px;
+        }
+    }
+
+    &-coupon {
+        margin-top: 20px;
+        border-top: 1px solid #0A5353;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 20px;
+
+        &__input {
+            @include fontStyle(14px, 300);
+            width: 50%;
+        }
+
+        &__btn {
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+            @include fontStyle(14px , 300, #0a5353);
+            border: 1px solid #0A5353;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 30px;
+
+            &_null {
+                pointer-events: none;
+                border-color: #c8c8c8;
+                color: #c8c8c8;
+            }
+        }
+    }
+
+    &-price {
+        margin-top: 30px;
+
+        &-box {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin-left: auto;
+
+            &> p {
+                @include fontStyle(14px, 300, #4b4b4b, true);
+                flex: 1;
+                
+                &:nth-child(2) {
+                    text-align: right;
+                }
+            }
+
+            &:nth-child(3) {
+                margin-top: 10px;
+
+                &> p {
+                    @include fontStyle(20px, 500, #4b4b4b, true);
+                }
+            }
+        }
+    }
+
+    &-next-btn {
+        margin: 50px auto 0 auto;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        border: 1px solid #0A5353;
+        border-radius: 8px;
+        @include fontStyle(16px, 300, #0A5353);
+
+        &:hover {
+            background-color: #0A5353;
+            color: #fff;
+        }
+    }
+
+    &-text {
+        padding-left: 50px;
+        box-sizing: border-box;
+        @include fontStyle(14px, 300);
+        line-height: 19px;
+        height: 19px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .check {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .check {
+        width: 95%;
+
+        &-item {
+            &__title {
+                font-size: 14px;
+            }
+
+            &__price {
+                font-size: 14px;
+            }
+        }
+
+        &-price {
+            &-box {
+                width: 80%;
+            }
+        }
+    }
+}
+
+.icn-loading {
+    pointer-events: none;
+    color: #4b4b4b !important;
+}

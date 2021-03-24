@@ -1,0 +1,20 @@
+<div class="customer">
+    <div class="customer-box">
+        <div class="customer-box__content">
+            <img src="./assets/images/illustration/undraw-Social-media-rew-12q.png" alt="">
+        </div>
+        <div class="customer-box__content">
+            <p class="customer-box__title">會員登入</p>
+            <mat-form-field  class="customer-box__input">
+                <input type="text" matInput placeholder="請輸入信箱 or 手機號碼">
+            </mat-form-field>
+            <mat-form-field class="customer-box__input">
+                <input type="password" matInput placeholder="請輸入密碼">
+            </mat-form-field>
+            <button class="customer-box__button">登入</button>
+            <p class="customer-box__text">忘記密碼?</p>
+        </div>
+        <i class="icn-back fas fa-arrow-left" (click)="backHome()" matTooltip="回首頁"></i>
+        <i class="icn-dashboard fas fa-columns" (click)="goInnerLogin()" matTooltip="後台"></i>
+    </div>
+</div>

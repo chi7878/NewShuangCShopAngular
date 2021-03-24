@@ -1,0 +1,8 @@
+<div class="header">
+    <div class="header-box">
+        <p class="header-text header-text_active" [class.header-text_active]="activeTab >= 0">訂單確認</p>
+        <p class="header-text" [class.header-text_active]="activeTab >= 1">付款資料</p>
+        <p class="header-text" [class.header-text_active]="activeTab >= 2">訂單完成</p>
+        <div class="header-box__position" [style.width]="((activeTab + 1) * 33.3333) + '%' "></div>
+    </div>
+</div>

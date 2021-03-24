@@ -1,0 +1,209 @@
+@import '../../../shared.scss';
+
+.project-list {
+    padding-top: 20px;
+    height: calc(100% - 160px);
+    box-sizing: border-box;
+
+    &__new {
+        &-box {
+            display: flex;
+            align-items: center;
+            width: 120px;
+            height: 35px;
+            box-shadow: 0 0 20px #00000030;
+            background-color: #fff;
+            border-radius: 500px;
+            cursor: pointer;
+
+            .new-icon {
+                font-size: 35px;
+                color: #d36a6f;
+            }
+        }
+
+        &-text {
+            @include fontStyle(16px, #4b4b4b);
+            margin-left: 5px;
+        }
+    }
+
+    &__scrollbar {
+        width: 100%;
+
+        &-box {
+            height: calc(100% - 25px);
+            min-width: 960px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        height: 40px;
+
+        &-box {
+            margin-top: 20px;
+            width: 100%;
+            height: calc(100% - 60px);
+            box-shadow: 0 0 20px #00000030;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px 20px 20px 20px;
+            box-sizing: border-box;
+        }
+
+        &_header {
+            border-bottom: 1px solid #c8c8c8;
+            min-width: 960px;
+        }
+
+        &-scrollbar {
+            height: 100%;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(1) {
+            width: 10%;
+        }
+
+        &:nth-child(2) {
+            width: 40%;
+            justify-content: flex-start;
+            padding-left: 10px;
+            box-sizing: border-box;
+
+            .project-list__text {
+                text-align: left;
+            }
+        }
+
+        &:nth-child(3) {
+            width: 15%;
+            justify-content: flex-start;
+
+            > p {
+                text-align: left;
+            }
+        }
+
+        &:nth-child(4) {
+            width: 15%;
+            justify-content: flex-start;
+            
+            > p {
+                text-align: left;
+            }
+        }
+
+        &:nth-child(5) {
+            width: 10%;
+        }
+        
+        &:nth-child(6) {
+            width: 5%;
+        }
+
+        &:nth-child(7) {
+            width: 5%;
+            font-size: 16px;
+
+            &> i {
+                color: #c8c8c8;
+                cursor: pointer;
+
+                &:hover {
+                    color: #ff5b5b
+                }
+
+                &:active {
+                    color: #d13838;
+                }
+            }
+        }
+    }
+
+    &__text {
+        @include fontStyle(15px, 500, #4b4b4b, true);
+        line-height: 19px;
+        width: 90%;
+        text-align: center;
+    }
+
+    &__switch {
+        position: absolute;
+        top: 50%;
+        left: 1px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all .5s;
+
+        &-box {
+            cursor: pointer;
+            position: relative;
+            width: 40px;
+            height: 20px;
+            border-radius: 500px;
+            background-color: #d36a6f;
+            transition: all .5s;
+
+            &_open {
+                background-color: #34e2b0;
+                
+                .project-list__switch {
+                    left: initial;
+                    right: 1px;
+                }
+            }
+        }
+    } 
+}
+
+.icon-edit {
+    cursor: pointer;
+    color: #0A5353;
+    
+    &:hover {
+        color: #107a7a;        
+    }
+
+    &:active {
+        color: #004242;
+    }
+}
+
+::ng-deep .snack-bar__test {
+    background-color: #fff;
+
+    & span {
+        color: #005757;
+    }
+
+    .mat-button-wrapper {
+        color: #ff4081;
+    }
+}
+
+::ng-deep .project-list__list-scrollbar .ps-content {
+    height: 100%;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .project-list {
+        height: calc(100% - 208px);
+    }
+}
+
+::ng-deep .productPopup {
+    @media only screen and (max-width: 600px) {
+        height: 90% !important;
+    }
+}

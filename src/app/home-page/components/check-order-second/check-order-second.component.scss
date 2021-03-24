@@ -1,0 +1,109 @@
+@import '../../../shared.scss';
+
+.info {
+    width: 40%;
+    margin: 20px auto;
+
+    &-box {
+        &__title {
+            @include fontStyle(18px, 500);
+            margin-bottom: 20px;
+        }
+    }
+
+
+    &-btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    &-btn {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        @include fontStyle(16px, 300);
+
+        &:nth-child(1) {
+            margin-right: 10px;
+            border: 1px solid #0A5353;
+            color: #0A5353;
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: #0A5353;
+                color: #fff;
+            }
+
+            &:active {
+                border-color: #004242;
+                background-color: #004242;
+                color: #fff;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: #0A5353;
+            color: #fff;
+            
+            &:hover {
+                background-color: #107a7a;
+            }
+
+            &:active {
+                background-color: #004242;
+            }
+        }
+    }
+    
+    .info-btns > .info-btn_null {
+        background-color: #c8c8c8;
+        border: 1px solid #c8c8c8;
+        pointer-events: none;
+    }
+
+    &-input {
+        @include fontStyle(18px, 300);
+        width: calc(50% - 20px);
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+
+    &-customer {
+        &> .info-input {
+            &:nth-child(4) {
+                width: calc(100% - 20px);
+            }
+
+            &:nth-child(5) {
+                width: calc(100% - 20px);
+            }
+
+            &:nth-child(6) {
+                width: calc(100% - 20px);
+
+                & textarea {
+                    font-size: 14px;
+                    height: 100px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .info {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .info {
+        width: 95%;
+    }
+}

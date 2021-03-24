@@ -1,0 +1,23 @@
+<div class="inner">
+    <div class="inner-box">
+        <div class="inner-box__content">
+            <img src="./assets/images/illustration/undraw-work-together-h63l.png" alt="">
+        </div>
+        <div class="inner-box__content" [formGroup]="loginData">
+            <p class="inner-box__title">後台登入</p>
+            <mat-form-field  class="inner-box__input" floatLabel="always" hideRequiredMarker="true">
+                <mat-label class="inner-box__label">帳號</mat-label>
+                <input type="text" formControlName="user" matInput required>
+                <mat-error *ngIf="loginData.get('user').hasError('required')">請輸入帳號</mat-error>
+            </mat-form-field>
+            <mat-form-field class="inner-box__input" floatLabel="always" hideRequiredMarker="true">
+                <mat-label class="inner-box__label">密碼</mat-label>
+                <input type="password" formControlName="password" matInput required>
+                <mat-error *ngIf="loginData.get('password').hasError('required')">請輸入密碼</mat-error>
+            </mat-form-field>
+            <button class="inner-box__button" [class.inner-box__button_null]="showLogin()" (click)="login()">登入</button>
+        </div>
+        <i class="icn-back fas fa-arrow-left" (click)="backLogin()" matTooltip="回客戶登入"></i>
+    </div>
+    <app-loading-page [title]="'登入中...'" *ngIf="isLoaded"></app-loading-page>
+</div>

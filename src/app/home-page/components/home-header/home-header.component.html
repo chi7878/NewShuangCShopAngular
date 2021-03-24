@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="header-box" (click)="activeLink('home')">
+    <img src="./assets/images/new-shuang-logo.svg" alt="">
+  </div>
+  <ul class="header-box">
+    <li class="header-box__item" (click)="activeLink('home')">首頁</li>
+    <li class="header-box__item" (click)="activeLink('products')">商品</li>
+    <li class="header-box__item" (click)="activeLink('news')">消息</li>
+    <li class="header-box__item" (click)="activeLink('about')">關於</li>
+    <li class="header-box__item" (click)="activeLink('login')">登入</li>
+  </ul>
+  <div class="header-menu" (click)="isMenuOpened = true">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="header-menu-box" [class.header-menu-box_open]="isMenuOpened">
+    <p class="header-menu-box__item" (click)="activeLink('home')">首頁</p>
+    <p class="header-menu-box__item" (click)="activeLink('products')">商品</p>
+    <p class="header-menu-box__item" (click)="activeLink('news')">消息</p>
+    <p class="header-menu-box__item" (click)="activeLink('about')">關於</p>
+    <p class="header-menu-box__item" (click)="activeLink('login')">登入</p>
+    <i class="fas fa-times header-menu-box__close" (click)="isMenuOpened = false"></i>
+  </div>
+</div>

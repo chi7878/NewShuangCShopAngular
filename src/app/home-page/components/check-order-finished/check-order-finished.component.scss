@@ -1,0 +1,98 @@
+@import '../../../shared.scss';
+
+.finish {
+    width: 40%;
+    margin: 60px auto;
+
+    &-box {
+        &:nth-child(1) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &-svg {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #0A5353;
+        border-radius: 50%;
+        margin-bottom: 30px;
+
+        &> path {
+            stroke-width: 1px;
+            stroke: #0A5353;
+        }
+    }
+
+    &-title {
+        @include fontStyle(25px, 500, #0A5353);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &-text {
+        @include fontStyle(16px, 300, #0A5353);
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &-btn {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        @include fontStyle(16px, 300);
+
+        &:nth-child(1) {
+            margin-right: 10px;
+            border: 1px solid #0A5353;
+            color: #0A5353;
+            box-sizing: border-box;
+            
+            &:hover {
+                background-color: #0A5353;
+                color: #fff;
+            }
+
+            &:active {
+                border-color: #004242;
+                background-color: #004242;
+                color: #fff;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: #0A5353;
+            color: #fff;
+
+            &:hover {
+                background-color: #107a7a;
+            }
+    
+            &:active {
+                background-color: #004242;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .finish {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .finish {
+        width: 95%;
+    }
+}

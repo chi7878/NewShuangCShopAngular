@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="header-title-box">
+        <p class="header-title-box__title">Dashboard</p>
+        <div class="header-title-box__nav">
+            <div class="header-title-box__icon-box">
+                <i class="nav-icon fas fa-{{activeTab === 1 ? 'box-open' : (activeTab === 2 ? 'ticket-alt' : 'shopping-cart')}}"></i>
+            </div>
+            <p class="header-title-box__text">{{activeTab === 1 ? '商品' : (activeTab === 2 ? '優惠券' : '訂單')}}</p>
+        </div>
+    </div>
+    <ul class="header-info__list">
+        <li class="header-info__item">
+            <p class="header-info__num">{{headerInfo['productQty']}}</p>
+            <p class="header-info__text">/目前商品數</p>
+        </li>
+        <li class="header-info__item">
+            <p class="header-info__num">{{headerInfo['totalOrder']}}</p>
+            <p class="header-info__text">/總訂單數</p>
+        </li>
+        <li class="header-info__item">
+            <p class="header-info__num">{{headerInfo['totalPrice'] | number: '1.'}}</p>
+            <p class="header-info__text">/總銷售金額</p>
+        </li>
+        <!-- <li class="header-info__item">
+            <p class="header-info__num">500</p>
+            <p class="header-info__text">/總訂單數</p>
+        </li> -->
+    </ul>
+</div>

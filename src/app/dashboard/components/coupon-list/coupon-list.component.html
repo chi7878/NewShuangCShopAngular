@@ -1,0 +1,55 @@
+<div class="coupon-list">
+    <div class="coupon-list__new-box" matTooltip="新增優惠券" matTooltipPosition="above"  (click)="openNewCoupon()">
+        <i class="new-icon fas fa-plus-circle"></i>
+        <p class="coupon-list__new-text">新增優惠券</p>
+    </div>
+    <div class="coupon-list__list-box">
+        <perfect-scrollbar  class="coupon-list__list-scrollbar ps-show-always" [config]="{suppressScrollX : false, suppressScrollY : true}">
+            <ul class="coupon-list__list coupon-list__list_header">
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">名稱</p>
+                </li>
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">折扣碼</p>
+                </li>
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">折扣</p>
+                </li>
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">是否啟用</p>
+                </li>
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">編輯</p>
+                </li>
+                <li class="coupon-list__item">
+                    <p class="coupon-list__text">刪除</p>
+                </li>
+            </ul>
+            <div class="coupon-list__scrollbar-box">
+                <perfect-scrollbar  class="coupon-list__scrollbar ps-show-always">
+                    <ul class="coupon-list__list" *ngFor="let coupon of couponList">
+                        <li class="coupon-list__item">
+                            <p class="coupon-list__text">{{coupon['title']}}</p>
+                        </li>
+                        <li class="coupon-list__item">
+                            <p class="coupon-list__text">{{coupon['code']}}</p>
+                        </li>
+                        <li class="coupon-list__item">
+                            <p class="coupon-list__text">{{coupon['percent']}}%</p>
+                        </li>
+                        <li class="coupon-list__item">
+                            <mat-slide-toggle color="primary" [(ngModel)]="coupon['is_enabled']" (click)="toggleOpened(coupon['is_enabled'], coupon['id'])"></mat-slide-toggle>
+                        </li>
+                        <li class="coupon-list__item">
+                            <i class="icon-edit fas fa-pencil-alt" (click)="editProduct(coupon)"></i>            
+                        </li>
+                        <li class="coupon-list__item">
+                            <i class="far fa-trash-alt" (click)="deleteCoupon(coupon['id'])"></i>           
+                        </li>
+                    </ul>
+                </perfect-scrollbar>
+            </div>
+        </perfect-scrollbar>
+    </div>
+    <app-loading-page *ngIf="isLoaded"></app-loading-page>
+</div>

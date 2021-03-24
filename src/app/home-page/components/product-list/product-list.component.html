@@ -1,0 +1,49 @@
+<div class="product">
+    <div class="product-header">
+        <swiper [config]="config">
+            <div class="swiper-slide cursor-pointer ">
+                <img  src="./assets/images/carousel/carousel-1.jpg"  alt="">
+            </div>
+            <div class="swiper-slide cursor-pointer">
+                <img src="./assets/images/carousel/carousel-2.jpg" alt="">
+            </div>
+        </swiper>
+    </div>
+    <div class="product-nav">
+        <p class="product-nav__title">分類</p>
+        <ul class="product-nav__list">
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '全部'" (click)="changeClass('全部')">全部</li>
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '配件'" (click)="changeClass('配件')">配件</li>
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '手機'" (click)="changeClass('手機')">手機</li>
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '穿戴'" (click)="changeClass('穿戴')">穿戴</li>
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '耳機'" (click)="changeClass('耳機')">耳機</li>
+            <li class="product-nav__item" [class.product-nav__item_active]="activeClass === '生活'" (click)="changeClass('生活')">生活</li>
+        </ul>
+    </div>
+    <div class="product-main">
+        <ul class="product-list">
+            <li class="product-item" *ngFor="let product of productList[page]" (click)="goProduct(product['id'])">
+                <div class="product-item__content">
+                    <div class="product-item__box">
+                        <img [src]="product['imageUrl']" alt="">
+                    </div>
+                    <div class="product-item__box">
+                        <p class="product-item__title">{{product['title']}}</p>
+                        <p class="product-item__price">NT${{product['price']}}</p>
+                    </div>
+                    <div class="product-item__hover">
+                        <p class="product-item__hover-text">{{product['category']}}</p>
+                        <p class="product-item__hover-text">VIEW</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="product-page-nav">
+        <i class="product-page-nav__btn fas fa-angle-left" [class.product-page-nav__btn_null]="page === 0" (click)="changePage('prev')" ></i>
+        <p class="product-page-nav__item"*ngFor="let item of productList; let i = index"
+        [class.product-page-nav__item_active]="page === i" (click)="changePage(i + 1)">{{i + 1}}</p>
+        <i class="product-page-nav__btn fas fa-angle-right" [class.product-page-nav__btn_null]="page === productList.length - 1" (click)="changePage('next')"></i>
+    </div>
+    <app-loading-page *ngIf="isLoaded"></app-loading-page>
+</div>

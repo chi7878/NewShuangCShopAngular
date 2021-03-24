@@ -1,0 +1,168 @@
+@import '../../../shared.scss';
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    &-box {
+        box-shadow: 0 0 5px 0.3px #00000030;
+
+        &:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-bottom-right-radius: 50%;
+            cursor: pointer;
+
+            &> img {
+                width: 85%;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 70%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 30px;
+            padding-left: 100px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-bottom-left-radius: 8px;
+        }
+        
+        &__item {
+            text-align: center;
+            @include fontStyle(18px, 300);
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 5px;
+                height: 5px;
+                background-color: #033838;
+                border-radius: 50%;
+                opacity: 0;
+                transition: all .3s;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-menu {
+        display: none;
+
+        &-box {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) { 
+    .header {
+        &-box {
+            &:nth-child(1) {
+                width: 90px;
+                height: 90px;
+            }
+    
+            &:nth-child(2) {
+                width: 70%;
+                height: 50px;
+                padding-right: 30px;
+                padding-left: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .header {
+        &-box {
+            &:nth-child(1) {
+                width: 70px;
+                height: 70px;
+            }
+
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+
+        &-menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px 0.3px #00000030;
+            margin-top: 10px;
+            margin-right: 10px;
+            border-radius: 8px;
+            z-index: 1;
+
+            &-box {
+                transition: all .5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                position: absolute;
+                right: 0;
+                top: -300px;
+                width: 100%;
+                height: 300px;
+                background-color: #ffffff;
+                z-index: 2;
+                box-shadow: 0 0 5px 0.3px #00000030;
+                z-index: 1;
+                padding-top: 80px;
+                box-sizing: border-box;
+
+                &__item {
+                    list-style: none;
+                    height: 40px;
+                    text-align: center;
+                    @include fontStyle(18px, 300);
+                    line-height: 40px;
+                    margin: 0 20px;
+                    width: calc(100% - 40px);
+                    cursor: pointer;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #c8c8c8;
+                    }
+                }
+
+                &_open {
+                    top: 0;
+                }
+
+                > i {
+                    position: absolute;
+                    top: 21px;
+                    right: 25px;
+                    font-size: 18px;
+                    color: #c8c8c8;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

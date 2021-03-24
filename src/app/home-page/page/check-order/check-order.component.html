@@ -1,0 +1,8 @@
+<div class="order">
+    <app-home-header></app-home-header>
+    <app-check-order-header [activeTab]="activeTab"></app-check-order-header>
+    <app-check-order-first (nextStep)="nextStep()" [hidden]="activeTab !== 0"></app-check-order-first>
+    <app-check-order-second (nextStep)="nextStep()" (prevStep)="prevStep()" [hidden]="activeTab !== 1"></app-check-order-second>
+    <app-check-order-finished [hidden]="activeTab !== 2"></app-check-order-finished>
+    <app-home-footer></app-home-footer>
+</div>

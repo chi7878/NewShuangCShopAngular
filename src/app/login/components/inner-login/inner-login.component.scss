@@ -1,0 +1,186 @@
+@import '../../../shared.scss';
+
+.inner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    &-box {
+        position: absolute;
+        width: 70%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border-radius: 16px;
+        display: flex;
+        
+        &__content {
+            flex: 1;
+
+            &:nth-child(1) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                >img {
+                    width: 100%;
+                    align-self: center;
+                }
+            }
+
+            &:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        &__title {
+            @include fontStyle(25px , 300, #0A5353);
+            line-height: 33px;
+            padding: 30px 0;
+            border-bottom: 1px solid #0A5353;
+            margin-bottom: 50px;
+        }
+
+        &__input {
+            width: 60%;
+            margin-bottom: 30px;
+            @include fontStyle(16px , 300);
+        }
+
+        &__button {
+            @include fontStyle(14px , 300, #fff);
+            background-color: #0A5353;
+            border: none;
+            outline: none;
+            width: 60%;
+            border-radius: 500px;
+            height: 40px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #107a7a;
+            }
+
+            &:active {
+                background-color: #004242;
+            }
+
+            &_null {
+                background-color: #c8c8c8;
+                pointer-events: none;
+            }
+        }
+
+        &__text {
+            margin-top: 10px;
+            @include fontStyle(14px , 300, #9c9c9c);
+            cursor: pointer;
+
+            &:hover {
+                color: #4b4b4b;
+            }
+        }
+    }
+
+    .icn-back {
+        position: absolute;
+        top: 20px;
+        left: 40px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #c8c8c8;
+
+        &:hover {
+            color: #0A5353;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 900px) { 
+    .inner {
+        &-box {
+            flex-direction: column;
+            min-height: 370px;
+
+            &__content {
+                &:nth-child(1) {
+                    flex: .5;
+                    >img {
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__title {
+                padding: 10px 0;
+                margin-bottom: 30px;
+            }
+
+            &__input {
+                margin-bottom: 10px;            
+            }
+        }
+    }
+
+    .inner .icn-back {
+        top: 10px;
+        left: 20px;
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 599px) { 
+    .inner {
+        &-box {
+            flex-direction: column;
+            min-height: 370px;
+
+            &__content {
+                &:nth-child(1) {
+                    flex: .5;
+                    >img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            &__title {
+                padding: 10px 0;
+                margin-bottom: 30px;
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            &__input {
+                width: 70%;
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+
+            &__button {
+                height: 30px;
+            }
+
+            &__text {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .inner .icn-back {
+        top: 10px;
+        left: 20px;
+        font-size: 26px;
+    }
+}

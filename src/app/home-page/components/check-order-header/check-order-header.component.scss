@@ -1,0 +1,64 @@
+@import '../../../shared.scss';
+
+.header {
+    width: 40%;
+    margin: 0 auto;
+
+
+    &-box {
+        position: relative;
+        border-bottom: 2px solid #c8c8c8;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+
+        &__position {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            background-color: #0A5353;
+            width: 33.3333%;
+            transition: all .5s;
+        }
+    }
+
+    &-text {
+        width: 33.3333%;
+        @include fontStyle(16px, 100, #c8c8c8);
+        text-align: center;
+
+        &_active {
+            color: #0A5353;
+            font-weight: 300;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #0A5353;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .header {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .header {
+        width: 95%;
+    }
+}

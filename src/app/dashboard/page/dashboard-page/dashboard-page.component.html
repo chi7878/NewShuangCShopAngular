@@ -1,0 +1,10 @@
+<div class="dashboard">
+    <app-left-bar (changeTabNum)="changeTabNum($event)"></app-left-bar>
+    <div class="right-box">
+        <app-header [activeTab]="activeTab" [headerInfo]="headerInfo"></app-header>
+        <app-project-list [productList]="productList" (updateList)="updateList()" *ngIf="activeTab === 1"></app-project-list>
+        <app-coupon-list *ngIf="activeTab === 2"></app-coupon-list>
+        <app-order-list *ngIf="activeTab === 3"></app-order-list>
+    </div>
+    <app-loading-page *ngIf="isLoaded"></app-loading-page>
+</div>

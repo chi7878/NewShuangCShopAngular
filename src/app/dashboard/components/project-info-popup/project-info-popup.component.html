@@ -1,0 +1,73 @@
+<div class="popup">
+    <p class="popup-title" mat-dialog-title>{{this.data && this.data.isEdit ? '編輯商品': '新增商品'}}</p>
+    <div class="popup-scrollbar-box" [formGroup]="formData">
+        <perfect-scrollbar  class="popup-scrollbar">
+            <div class="popup-form">
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <input type="text" formControlName="name" matInput placeholder="商品名稱" required>
+                    <mat-error *ngIf="formData.get('name').hasError('maxlength')">名稱最多200字</mat-error>
+                    <mat-error *ngIf="formData.get('name').hasError('required') || formData.get('name').hasError('pattern')">請輸入名稱</mat-error>
+                </mat-form-field>
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <input type="number" formControlName="num" matInput placeholder="數量" required>
+                    <mat-error *ngIf="formData.get('num').hasError('required')">請輸入數量</mat-error>
+                </mat-form-field>
+                <mat-slide-toggle class="popup-form__slide" formControlName="isOpened" color="primary" labelPosition="before">啟用</mat-slide-toggle>
+            </div>
+            <div class="popup-form">
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <span matPrefix>$</span>
+                    <input type="number" formControlName="originalPrice" matInput placeholder="原價" required>
+                    <mat-error *ngIf="formData.get('originalPrice').hasError('required')">請輸入價格</mat-error>
+                </mat-form-field>
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <span matPrefix>$</span>
+                    <input type="number" formControlName="sellingPrice" matInput placeholder="售價" required>
+                    <mat-error *ngIf="formData.get('sellingPrice').hasError('required')">請輸入價格</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="popup-form">
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <input type="text" formControlName="class" matInput placeholder="分類" required>
+                    <mat-error *ngIf="formData.get('class').hasError('maxlength')">分類最多50字</mat-error>
+                    <mat-error *ngIf="formData.get('class').hasError('required')">請輸入分類</mat-error>
+                </mat-form-field>
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <input type="text" formControlName="unit" matInput placeholder="單位" required>
+                    <mat-error *ngIf="formData.get('unit').hasError('maxlength')">單位最多50字</mat-error>
+                    <mat-error *ngIf="formData.get('unit').hasError('required')">請輸入單位</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="popup-form">
+                <mat-form-field class="popup-form__input" floatLabel="always">
+                    <textarea type="text"formControlName="content" matInput placeholder="產品描述" required></textarea>
+                    <mat-error *ngIf="formData.get('content').hasError('maxlength')">描述最多300字</mat-error>
+                    <mat-error *ngIf="formData.get('content').hasError('required')">請輸入描述</mat-error>
+                </mat-form-field>
+                <div class="popup-img-box">
+                    <mat-form-field class="popup-form__input" floatLabel="always">
+                        <input type="text" formControlName="imgUrl" matInput placeholder="請輸入圖片網址">
+                    </mat-form-field>
+                    <div class="popup-img-upload">
+                        <p class="popup-img-upload__text">或上傳圖片</p>
+                        <label for="img-file">
+                            <p>{{!formData.controls.fileName.value ? '選擇檔案' : formData.controls.fileName.value}}</p>
+                            <i class="fas fa-paperclip"></i>
+                            <input type="file"  name="" id="img-file" (change)="changeImg($event)">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </perfect-scrollbar>
+    </div>
+    <mat-dialog-actions class="popup-buttons">
+        <button class="popup-button" mat-dialog-close color="warn">取消</button>
+        <button class="popup-button" [class.popup-button_disabled]="showConfirm()" color="primary" (click)="addProduct()">{{this.data && this.data.isEdit ? '編輯': '新增'}}</button>
+    </mat-dialog-actions>
+    <div class="popup-close">
+        <button class="popup-button-close" mat-dialog-close color="warn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <app-loading-page [title]="'上傳中...'" *ngIf="isUploaded"></app-loading-page>
+</div>

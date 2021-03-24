@@ -1,0 +1,17 @@
+<div class="">
+  <app-home-header></app-home-header>
+  <app-home-main *ngIf="activeRoute === 'home'"></app-home-main>
+  <app-about-us *ngIf="activeRoute === 'about'"></app-about-us>
+  <app-contact-us *ngIf="activeRoute === 'contact'"></app-contact-us>
+  <app-question-list *ngIf="activeRoute === 'question'"></app-question-list>
+  <app-shopping-item *ngIf="activeRoute === 'shopping'"></app-shopping-item>
+  <app-return-package *ngIf="activeRoute === 'return'"></app-return-package>
+  <app-news *ngIf="activeRoute === 'news'"></app-news>
+  <app-product-list *ngIf="activeRoute === 'products'"></app-product-list>
+  <app-product-info *ngIf="activeRoute === 'product/:id'" (updateCartList)="getCartList()"></app-product-info>
+  <app-home-footer></app-home-footer>
+  <button class="cart" *ngIf="(activeRoute === 'product/:id' || activeRoute === 'products') && this.cartList.length > 0" (click)="goCheckOrder()"
+    mat-raised-button color="primary"  [matBadge]="this.cartList.length" matBadgePosition="before" matBadgeColor="warn">
+      <i class="fas fa-shopping-cart"></i>
+  </button>
+</div>
