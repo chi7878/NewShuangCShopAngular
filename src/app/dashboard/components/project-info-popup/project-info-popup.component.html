@@ -40,7 +40,7 @@
             </div>
             <div class="popup-form">
                 <mat-form-field class="popup-form__input" floatLabel="always">
-                    <textarea type="text"formControlName="content" matInput placeholder="產品描述" required></textarea>
+                    <textarea type="text" formControlName="content" matInput placeholder="產品描述" required></textarea>
                     <mat-error *ngIf="formData.get('content').hasError('maxlength')">描述最多300字</mat-error>
                     <mat-error *ngIf="formData.get('content').hasError('required')">請輸入描述</mat-error>
                 </mat-form-field>

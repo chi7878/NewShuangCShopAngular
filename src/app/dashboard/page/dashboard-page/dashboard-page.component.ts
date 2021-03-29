@@ -44,15 +44,7 @@ export class DashboardPageComponent implements OnInit {
     })
   }
 
-  getCoupon() {
-
-  }
-
   updateList() {
     this.getData();
-  }
-
-  updateCouponList() {
-
   }
 }
