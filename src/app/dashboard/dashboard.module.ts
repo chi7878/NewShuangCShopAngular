@@ -21,9 +21,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { OrderInfoPopupComponent } from './components/order-info-popup/order-info-popup.component';
 
 @NgModule({
-  declarations: [DashboardPageComponent, LeftBarComponent, HeaderComponent, ProjectListComponent, OrderListComponent, CouponListComponent, ProjectInfoPopupComponent, AlertPopupComponent, CouponInfoPopupComponent],
+  declarations: [DashboardPageComponent, LeftBarComponent, HeaderComponent, ProjectListComponent, OrderListComponent, CouponListComponent, ProjectInfoPopupComponent, AlertPopupComponent, CouponInfoPopupComponent, OrderInfoPopupComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

@@ -1,0 +1,54 @@
+<div class="popup">
+    <p class="popup-title" mat-dialog-title>訂單明細</p>
+    <perfect-scrollbar  class="popup-main-scrollbar">
+        <div class="popup-main">
+            <div class="popup-box">
+                <perfect-scrollbar class="popup-scrollbar">
+                    <ul class="popup-list">
+                        <li class="popup-item" *ngFor="let product of data['info']['products'] | keyvalue">
+                            <div class="popup-img">
+                                <img [src]="product['value']['product']['imageUrl']" alt="">
+                            </div>
+                            <p class="popup-item__name">{{product['value']['product']['title']}}</p>
+                            <p class="popup-item__text">{{product['value']['qty']}}{{product['value']['product']['unit']}}</p>
+                        </li>
+                    </ul>
+                </perfect-scrollbar>
+            </div>
+            <div class="popup-box">
+                <div class="popup-info__text-box">
+                    <p>收件人:</p>
+                    <p>{{data['info']['user']['name']}}</p>
+                </div>
+                <div class="popup-info__text-box">
+                    <p>收件人電話:</p>
+                    <p>{{data['info']['user']['tel']}}</p>
+                </div>
+                <div class="popup-info__text-box">
+                    <p>收件地址:</p>
+                    <p>{{data['info']['user']['address']}}</p>
+                </div>
+                <div class="popup-info__text-box">
+                    <p>收件人信箱:</p>
+                    <p>{{data['info']['user']['email']}}</p>
+                </div>
+                <div class="popup-info__total-box">
+                    <p>購買金額:</p>
+                    <p>NT${{totalPrice(data['info']['total'])| number: '1.'}}</p>
+                </div>
+                <div class="popup-info__total-box">
+                    <p>目前狀態:</p>
+                    <p>{{data['info']['is_paid'] ? '待出貨' : '待付款'}}</p>
+                </div>
+            </div>
+        </div>
+    </perfect-scrollbar>
+    <mat-dialog-actions class="popup-buttons">
+        <button class="popup-button" mat-dialog-close color="warn">取消</button>
+    </mat-dialog-actions>
+    <div class="popup-close">
+        <button class="popup-button-close" mat-dialog-close color="warn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>

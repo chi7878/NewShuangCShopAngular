@@ -4,7 +4,7 @@
         <p class="coupon-list__new-text">新增優惠券</p>
     </div>
     <div class="coupon-list__list-box">
-        <perfect-scrollbar  class="coupon-list__list-scrollbar ps-show-always" [config]="{suppressScrollX : false, suppressScrollY : true}">
+        <perfect-scrollbar  class="coupon-list__list-scrollbar" [config]="{suppressScrollX : false, suppressScrollY : true}">
             <ul class="coupon-list__list coupon-list__list_header">
                 <li class="coupon-list__item">
                     <p class="coupon-list__text">名稱</p>
@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <div class="coupon-list__scrollbar-box">
-                <perfect-scrollbar  class="coupon-list__scrollbar ps-show-always">
+                <perfect-scrollbar  class="coupon-list__scrollbar">
                     <ul class="coupon-list__list" *ngFor="let coupon of couponList">
                         <li class="coupon-list__item">
                             <p class="coupon-list__text">{{coupon['title']}}</p>

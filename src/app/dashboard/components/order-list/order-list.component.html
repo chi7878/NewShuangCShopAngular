@@ -1,6 +1,6 @@
 <div class="order-list">
     <div class="order-list__list-box">
-        <perfect-scrollbar  class="order-list__list-scrollbar ps-show-always" [config]="{suppressScrollX : false, suppressScrollY : true}">
+        <perfect-scrollbar  class="order-list__list-scrollbar " [config]="{suppressScrollX : false, suppressScrollY : true}">
             <ul class="order-list__list order-list__list_header">
                 <li class="order-list__item">
                     <p class="order-list__text">狀態</p>
@@ -20,12 +20,11 @@
                 <li class="order-list__item">
                     <p class="order-list__text">總金額</p>
                 </li>
-                <!-- <li class="order-list__item">
-                    <p class="order-list__text">編輯</p>
-                </li> -->
+                <li class="order-list__item">
+                </li>
             </ul>
             <div class="order-list__scrollbar-box">
-                <perfect-scrollbar  class="order-list__scrollbar ps-show-always">
+                <perfect-scrollbar  class="order-list__scrollbar ">
                     <ul class="order-list__list" *ngFor="let order of orderList">
                         <li class="order-list__item">
                             <p class="order-list__text">{{order['is_paid'] ? '待出貨' : '待付款'}}</p>
@@ -45,9 +44,11 @@
                         <li class="order-list__item">
                             <p class="order-list__text">NT${{totalPrice(order['total'])| number: '1.'}}</p>
                         </li>
-                        <!-- <li class="order-list__item">
-                            <i class="icon-edit fas fa-pencil-alt"></i>            
-                        </li> -->
+                        <li class="order-list__item">
+                            <div class="order-list__info" (click)="openOrderInfo(order)">
+                                <i class="fas fa-info"></i>
+                            </div>
+                        </li>
                     </ul>
                 </perfect-scrollbar>
             </div>

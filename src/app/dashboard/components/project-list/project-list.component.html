@@ -4,7 +4,7 @@
         <p class="project-list__new-text">新增商品</p>
     </div>
     <div class="project-list__list-box">
-        <perfect-scrollbar  class="project-list__list-scrollbar ps-show-always" [config]="{suppressScrollX : false, suppressScrollY : true}">
+        <perfect-scrollbar  class="project-list__list-scrollbar " [config]="{suppressScrollX : false, suppressScrollY : true}">
             <ul class="project-list__list project-list__list_header">
                 <li class="project-list__item">
                     <p class="project-list__text">分類</p>
@@ -29,7 +29,7 @@
                 </li>
             </ul>
             <div class="project-list__scrollbar-box">
-                <perfect-scrollbar  class="project-list__scrollbar ps-show-always">
+                <perfect-scrollbar  class="project-list__scrollbar ">
                     <ul class="project-list__list" *ngFor="let product of productList">
                         <li class="project-list__item">
                             <p class="project-list__text">{{product['category']}}</p>
