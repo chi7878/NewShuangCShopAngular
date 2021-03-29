@@ -21,24 +21,24 @@
     &-svg {
         width: 80px;
         height: 80px;
-        border: 1px solid #0A5353;
+        border: 1px solid $mainColor;
         border-radius: 50%;
         margin-bottom: 30px;
 
         &> path {
             stroke-width: 1px;
-            stroke: #0A5353;
+            stroke: $mainColor;
         }
     }
 
     &-title {
-        @include fontStyle(25px, 500, #0A5353);
+        @include fontStyle(25px, 500, $mainColor);
         text-align: center;
         margin-bottom: 20px;
     }
 
     &-text {
-        @include fontStyle(16px, 300, #0A5353);
+        @include fontStyle(16px, 300, $mainColor);
         text-align: center;
         margin-bottom: 50px;
     }
@@ -54,32 +54,32 @@
 
         &:nth-child(1) {
             margin-right: 10px;
-            border: 1px solid #0A5353;
-            color: #0A5353;
+            border: 1px solid $mainColor;
+            color: $mainColor;
             box-sizing: border-box;
             
             &:hover {
-                background-color: #0A5353;
+                background-color: $mainColor;
                 color: #fff;
             }
 
             &:active {
-                border-color: #004242;
-                background-color: #004242;
+                border-color: $mainDarkColor;
+                background-color: $mainDarkColor;
                 color: #fff;
             }
         }
 
         &:nth-child(2) {
-            background-color: #0A5353;
+            background-color: $mainColor;
             color: #fff;
 
             &:hover {
-                background-color: #107a7a;
+                background-color: $mainLightColor;
             }
     
             &:active {
-                background-color: #004242;
+                background-color: $mainDarkColor;
             }
         }
     }

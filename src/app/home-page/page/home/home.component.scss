@@ -1,3 +1,5 @@
+@import '../../../shared.scss';
+
 app-home-header {
     position: fixed;
     width: 100%;
@@ -13,7 +15,7 @@ app-home-header {
     align-items: center;
     width: 60px;
     height: 60px;
-    background-color: #0A5353;
+    background-color: $mainColor;
     color: #fff;
     border-radius: 50%;
     cursor: pointer;
@@ -21,10 +23,10 @@ app-home-header {
     outline: none;
 
     &:hover {
-        background-color: #107a7a;
+        background-color: $mainLightColor;
     }
 
     &:active {
-        background-color: #004242;
+        background-color: $mainDarkColor;
     }
 }

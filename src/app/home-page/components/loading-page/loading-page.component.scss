@@ -17,7 +17,7 @@
     flex-direction: column;
 
     & p {
-        @include fontStyle(30px, 100, #0A5353);
+        @include fontStyle(30px, 100, $mainColor);
         height: 45px;
     }
 

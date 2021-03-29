@@ -20,7 +20,7 @@
         box-sizing: border-box;
 
         &__title {
-            @include fontStyle(32px, 300, #0a5353);
+            @include fontStyle(32px, 300, $mainColor);
             line-height: 38px;
             background-color: #ffffff90;
             padding: 10px 30px;

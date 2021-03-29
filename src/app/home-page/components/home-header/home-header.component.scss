@@ -50,7 +50,7 @@
                 transform: translateX(-50%);
                 width: 5px;
                 height: 5px;
-                background-color: #033838;
+                background-color: $mainColor;
                 border-radius: 50%;
                 opacity: 0;
                 transition: all .3s;
@@ -146,7 +146,7 @@
                     cursor: pointer;
 
                     &:not(:last-child) {
-                        border-bottom: 1px solid #c8c8c8;
+                        border-bottom: 1px solid $disbandColor;
                     }
                 }
 
@@ -159,7 +159,7 @@
                     top: 21px;
                     right: 25px;
                     font-size: 18px;
-                    color: #c8c8c8;
+                    color: $disbandColor;
                     cursor: pointer;
                 }
             }

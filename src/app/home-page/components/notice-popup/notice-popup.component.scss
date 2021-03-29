@@ -17,18 +17,18 @@
         width: 100px;
         height: 30px;
         border-radius: 8px;
-        background-color: #0A5353;
+        background-color: $mainColor;
         border: none;
         outline: none;
         @include fontStyle(16px, 100, #fff);
         cursor: pointer;
 
         &:hover {
-            background-color: #107a7a;
+            background-color: $mainLightColor;
         }
 
         &:active {
-            background-color: #004242;
+            background-color: $mainDarkColor;
         }
     }
 }

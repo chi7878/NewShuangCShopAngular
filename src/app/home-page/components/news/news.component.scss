@@ -20,7 +20,7 @@
         box-sizing: border-box;
 
         &__title {
-            @include fontStyle(32px, 300, #0a5353);
+            @include fontStyle(32px, 300, $mainColor);
             line-height: 38px;
             background-color: #ffffff90;
             padding: 10px 30px;
@@ -29,7 +29,7 @@
     }
 
     &-text {
-        @include fontStyle(16px, 300, #4b4b4b, true);
+        @include fontStyle(16px, 300, $fontColor, true);
         letter-spacing: 3px;
         line-height: 21px;
         padding: 0 10px;
@@ -44,7 +44,7 @@
         height: 500px;
         margin: 0 auto;
         border-radius: 8px;
-        border: 1px solid #c8c8c8;
+        border: 1px solid $disbandColor;
         padding: 30px;
         box-sizing: border-box;
 
@@ -55,11 +55,11 @@
                 align-items: center;
                 padding-bottom: 20px;
                 box-sizing: border-box;
-                border-bottom: 1px solid #0a5353;
+                border-bottom: 1px solid $mainColor;
             }
 
             &-item {
-                @include fontStyle(18px, 300, #c8c8c8);
+                @include fontStyle(18px, 300, $disbandColor);
                 width: 10%;
                 text-align: center;
                 padding: 10px 0;
@@ -76,16 +76,16 @@
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
-                    border: 1px solid #c8c8c8;
+                    border: 1px solid $disbandColor;
                     box-sizing: border-box;
                 }
 
                 &_active {
-                    color: #0a5353;
+                    color: $mainColor;
 
                     &::before {
-                        background-color: #0a5353;
-                        border: 1px solid #0a5353;
+                        background-color: $mainColor;
+                        border: 1px solid $mainColor;
                     }
                 }
             }
@@ -102,7 +102,7 @@
                         flex: 1;
                         @include fontStyle(14px, 500);
                         line-height: 16px;
-                        border: 1px solid #0a5353;
+                        border: 1px solid $mainColor;
                         padding: 5px;
                         border-radius: 8px;
                         text-align: center;
@@ -116,7 +116,7 @@
     
                     &:nth-child(3) {
                         flex: 3;
-                        @include fontStyle(14px, 300, #8d8d8d);
+                        @include fontStyle(14px, 300, $fontLightColor);
                         line-height: 16px;
                         text-align: center;
                     }

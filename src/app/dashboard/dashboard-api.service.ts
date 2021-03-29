@@ -53,4 +53,9 @@ export class DashboardApiService {
   deleteCoupon(id) {
     return this.api.deleteInCookies(`${this.link}/admin/coupon/${id}`, this.cookies);
   }
+
+  
+  postLogout() {
+    return this.api.postInCookies(`https://vue-course-api.hexschool.io/logout`, undefined,  this.cookies);
+  }
 }

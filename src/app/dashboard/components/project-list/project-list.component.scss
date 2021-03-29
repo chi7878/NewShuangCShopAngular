@@ -18,12 +18,12 @@
 
             .new-icon {
                 font-size: 35px;
-                color: #d36a6f;
+                color: $warnColor;
             }
         }
 
         &-text {
-            @include fontStyle(16px, #4b4b4b);
+            @include fontStyle(16px, $fontColor);
             margin-left: 5px;
         }
     }
@@ -54,7 +54,7 @@
         }
 
         &_header {
-            border-bottom: 1px solid #c8c8c8;
+            border-bottom: 1px solid $disbandColor;
             min-width: 960px;
         }
 
@@ -114,22 +114,22 @@
             font-size: 16px;
 
             &> i {
-                color: #c8c8c8;
+                color: $disbandColor;
                 cursor: pointer;
 
                 &:hover {
-                    color: #ff5b5b
+                    color: $warnColor;
                 }
 
                 &:active {
-                    color: #d13838;
+                    color: $warnDarkColor;
                 }
             }
         }
     }
 
     &__text {
-        @include fontStyle(15px, 500, #4b4b4b, true);
+        @include fontStyle(15px, 500, $fontColor, true);
         line-height: 19px;
         width: 90%;
         text-align: center;
@@ -152,11 +152,11 @@
             width: 40px;
             height: 20px;
             border-radius: 500px;
-            background-color: #d36a6f;
+            background-color: $warnColor;
             transition: all .5s;
 
             &_open {
-                background-color: #34e2b0;
+                background-color: $mainLightColor;
                 
                 .project-list__switch {
                     left: initial;
@@ -169,14 +169,14 @@
 
 .icon-edit {
     cursor: pointer;
-    color: #0A5353;
+    color: $mainColor;
     
     &:hover {
-        color: #107a7a;        
+        color: $mainLightColor;        
     }
 
     &:active {
-        color: #004242;
+        color: $mainDarkColor;
     }
 }
 
@@ -184,11 +184,11 @@
     background-color: #fff;
 
     & span {
-        color: #005757;
+        color: $mainColor;
     }
 
     .mat-button-wrapper {
-        color: #ff4081;
+        color: $warnColor;
     }
 }
 

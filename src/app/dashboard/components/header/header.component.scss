@@ -7,10 +7,10 @@
         display: flex;
         align-items: center;
         padding-bottom: 20px;
-        border-bottom: 2px solid #c8c8c8;
+        border-bottom: 2px solid $disbandColor;
 
         &__title {
-            @include fontStyle(35px, 700, #4b4b4b);
+            @include fontStyle(35px, 700, $fontColor);
             line-height: 40px;
             margin-right: 20px;
         }
@@ -28,7 +28,7 @@
         &__icon-box {
             width: 35px;
             height: 35px;
-            background-color: #abd1c6;
+            background-color: $mainLightColor;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -94,21 +94,21 @@
         }
 
         &__num {
-            @include fontStyle(35px, 500, #4b4b4b, true);
+            @include fontStyle(35px, 500, $fontColor, true);
             width: 90%;
             text-align: right;
             line-height: 40px;
         }
 
         &__text {
-            @include fontStyle(16px, 300, #605f5f);
+            @include fontStyle(16px, 300, $fontLightColor);
         }
     }
 }
 
 .nav-icon {
     font-size: 20px;
-    color: #4b4b4b;
+    color: $fontColor;
 }
 
 

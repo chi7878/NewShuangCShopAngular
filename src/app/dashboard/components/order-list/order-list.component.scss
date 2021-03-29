@@ -31,7 +31,7 @@
         }
 
         &_header {
-            border-bottom: 1px solid #c8c8c8;
+            border-bottom: 1px solid $disbandColor;
             min-width: 760px;
         }
 
@@ -88,7 +88,7 @@
     }
 
     &__text {
-        @include fontStyle(15px, 500, #4b4b4b, true);
+        @include fontStyle(15px, 500, $fontColor, true);
         line-height: 18px;
         width: 90%;
     }
@@ -110,11 +110,11 @@
             width: 40px;
             height: 20px;
             border-radius: 500px;
-            background-color: #d36a6f;
+            background-color: $warnColor;
             transition: all .5s;
 
             &_open {
-                background-color: #34e2b0;
+                background-color: $mainLightColor;
                 
                 .order-list__switch {
                     left: initial;
@@ -127,14 +127,14 @@
 
 .icon-edit {
     cursor: pointer;
-    color: #0A5353;
+    color: $mainColor;
     
     &:hover {
-        color: #107a7a;        
+        color: $mainLightColor;        
     }
 
     &:active {
-        color: #004242;
+        color: $mainDarkColor;
     }
 }
 

@@ -3,7 +3,7 @@
 .footer {
     width: 90%;
     margin: 0 auto;
-    border-top: 1px solid #c8c8c8;
+    border-top: 1px solid $disbandColor;
     padding: 10px;
 
     &-box {
@@ -11,9 +11,9 @@
         align-items: center;
 
         &__title {
-            @include fontStyle(16px, 300, #033838);
+            @include fontStyle(16px, 300, $mainDarkColor);
             line-height: 19px;
-            border-right: 1px solid #033838;
+            border-right: 1px solid $mainDarkColor;
             padding-right: 5px;
             width: 80px;
             margin: 10px 0;
@@ -27,7 +27,7 @@
         }
 
         &__item {
-            @include fontStyle(14px, 100, #777777);
+            @include fontStyle(14px, 100, $fontLightColor);
             margin: 10px 20px;
             cursor: pointer;
 
@@ -51,7 +51,7 @@
     }
 
     &-state {
-        @include fontStyle(13px, 300, #033838);
+        @include fontStyle(13px, 300, $mainDarkColor);
         letter-spacing: 3 px;
     }
 }

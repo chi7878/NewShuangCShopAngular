@@ -4,6 +4,7 @@ import { LoginApiService } from './../../login-api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NoticePopupComponent } from '../../../home-page/components/notice-popup/notice-popup.component';
+import { DashboardApiService } from 'src/app/dashboard/dashboard-api.service';
 
 @Component({
   selector: 'app-inner-login',
@@ -16,7 +17,8 @@ export class InnerLoginComponent implements OnInit {
     password: new FormControl('')
   });
   isLoaded:boolean = false;
-  constructor(private router: Router, private loginApi: LoginApiService, private dialog: MatDialog) { }
+  constructor(private router: Router, private loginApi: LoginApiService, private dialog: MatDialog,
+  private dashboardApi :DashboardApiService) { }
 
   ngOnInit(): void {
     if (document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1') !== '') {
@@ -33,7 +35,8 @@ export class InnerLoginComponent implements OnInit {
 
     this.loginApi.postLogin(this.loginData.controls.user.value, this.loginData.controls.password.value).subscribe(data => {
       if (data['success']) {
-        document.cookie = `hexToken=${data['token']}; expires= ${new Date(data['expired'])}`
+        document.cookie = `hexToken=${data['token']}; expires= ${new Date(data['expired'])}`;
+        this.dashboardApi.cookies = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
         this.router.navigate(['/dashboard']);
       } else {
         this.dialog.open(NoticePopupComponent, {

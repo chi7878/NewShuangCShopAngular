@@ -8,12 +8,10 @@ import { ApiService } from '../shared/api.service';
 })
 export class LoginApiService {
   link = 'https://vue-course-api.hexschool.io';
-  cookies = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
   constructor(private api: ApiService) { }
 
   postLogin(username, password) {
     const data = {username, password};
-    return this.api.post(`${this.link}/admin/signin`, data)
-    
+    return this.api.post(`${this.link}/admin/signin`, data);
   }
 }

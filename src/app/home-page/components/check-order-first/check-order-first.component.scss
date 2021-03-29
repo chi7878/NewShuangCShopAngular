@@ -32,7 +32,7 @@
 
         &__price {
             width: 25%;
-            @include fontStyle(18px, 300, #4b4b4b, true);
+            @include fontStyle(18px, 300, $fontColor, true);
             text-align: center;
             line-height: 80px;
         }
@@ -42,16 +42,16 @@
             text-align: center;
             font-size: 18px;
             line-height: 80px;
-            color: #c8c8c8;
+            color: $disbandColor;
             cursor: pointer;
 
             &:hover {
-                color: #0A5353;
+                color: $mainColor;
             }
         }
 
         &__title {
-            @include fontStyle(16px, 300, #0A5353, true);
+            @include fontStyle(16px, 300, $mainColor, true);
             line-height: 21px;
         }
 
@@ -63,7 +63,7 @@
 
     &-coupon {
         margin-top: 20px;
-        border-top: 1px solid #0A5353;
+        border-top: 1px solid $mainColor;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -78,16 +78,16 @@
             width: 50px;
             height: 30px;
             cursor: pointer;
-            @include fontStyle(14px , 300, #0a5353);
-            border: 1px solid #0A5353;
+            @include fontStyle(14px , 300, $mainColor);
+            border: 1px solid $mainColor;
             border-radius: 8px;
             text-align: center;
             line-height: 30px;
 
             &_null {
                 pointer-events: none;
-                border-color: #c8c8c8;
-                color: #c8c8c8;
+                border-color: $disbandColor;
+                color: $disbandColor;
             }
         }
     }
@@ -102,7 +102,7 @@
             margin-left: auto;
 
             &> p {
-                @include fontStyle(14px, 300, #4b4b4b, true);
+                @include fontStyle(14px, 300, $fontColor, true);
                 flex: 1;
                 
                 &:nth-child(2) {
@@ -114,7 +114,7 @@
                 margin-top: 10px;
 
                 &> p {
-                    @include fontStyle(20px, 500, #4b4b4b, true);
+                    @include fontStyle(20px, 500, $fontColor, true);
                 }
             }
         }
@@ -127,12 +127,12 @@
         text-align: center;
         line-height: 30px;
         cursor: pointer;
-        border: 1px solid #0A5353;
+        border: 1px solid $mainColor;
         border-radius: 8px;
-        @include fontStyle(16px, 300, #0A5353);
+        @include fontStyle(16px, 300, $mainColor);
 
         &:hover {
-            background-color: #0A5353;
+            background-color: $mainColor;
             color: #fff;
         }
     }
@@ -176,5 +176,5 @@
 
 .icn-loading {
     pointer-events: none;
-    color: #4b4b4b !important;
+    color: $fontColor !important;
 }

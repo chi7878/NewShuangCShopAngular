@@ -34,14 +34,14 @@
         }
 
         &__title {
-            @include fontStyle(25px, 500, #4b4b4b, true);
+            @include fontStyle(25px, 500, $fontColor, true);
             line-height: 33px;
             margin-bottom: 10px;
         }
 
         &__tag {
-            @include fontStyle(14px, 300, #0A5353);
-            border: 1px solid #0A5353;
+            @include fontStyle(14px, 300, $mainColor);
+            border: 1px solid $mainColor;
             border-radius: 8px;
             text-align: center;
             width: 50px;
@@ -68,12 +68,12 @@
         &__price {
             &-original {
                 margin-top: 20px;
-                @include fontStyle(16px, 100, #c8c8c8);
+                @include fontStyle(16px, 100, $disbandColor);
                 text-decoration:line-through;
             }
             &-sale {
                 margin-top: 10px;
-                @include fontStyle(26px, 300, #da6565);
+                @include fontStyle(26px, 300, $warnColor);
             }
         }
 
@@ -89,7 +89,7 @@
             @include fontStyle(16px , 300, #fff);
             text-align: center;
             line-height: 35px;
-            background-color: #0A5353;
+            background-color: $mainColor;
             border-radius: 8px;
             cursor: pointer;
 
@@ -98,11 +98,11 @@
             }
 
             &:hover {
-                background-color: #107a7a;
+                background-color: $mainLightColor;
             }
 
             &:active {
-                background-color: #004242;
+                background-color: $mainDarkColor;
             }
         }
 
@@ -118,7 +118,7 @@
                 align-content: center;
                 margin-top: 20px;
                 width: 70px;
-                border: 1px solid #c8c8c8;
+                border: 1px solid $disbandColor;
                 border-radius: 4px;
                 padding: 5px;
                 box-sizing: border-box;
@@ -128,12 +128,12 @@
                     height: 20px;
                     text-align: center;
                     line-height: 20px;
-                    color: #4b4b4b;
+                    color: $fontColor;
                     cursor: pointer;
                 }
 
                 & > .info-box__add-null {
-                    color: #c8c8c8;
+                    color: $disbandColor;
                     pointer-events: none;
                 }
 
@@ -145,7 +145,7 @@
     &-content {
         width: 80%;
         height: 90%;
-        border: 1px solid #c8c8c8;
+        border: 1px solid $disbandColor;
         border-radius: 8px;
         padding: 30px;
         box-sizing: border-box;
@@ -156,7 +156,7 @@
         top: 180px;
         left: 20px;
         cursor: pointer;
-        color: #c8c8c8;
+        color: $disbandColor;
         font-size: 20px;
 
         &::after {
@@ -166,15 +166,15 @@
             transform: translateY(-50%);
             left: 20px;
             letter-spacing: 4px;
-            @include fontStyle(14px, 300, #c8c8c8)
+            @include fontStyle(14px, 300, $disbandColor)
         }
 
         &:hover {
-            color: #0A5353;
+            color: $mainColor;
         }
 
         &:hover::after {
-            color: #0A5353;
+            color: $mainColor;
         }
     }
 }

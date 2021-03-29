@@ -22,14 +22,14 @@
         margin: 0 auto;
         margin-bottom: 20px;
         width: 50%;
-        border-bottom: 1px solid #c8c8c8;
+        border-bottom: 1px solid $disbandColor;
 
         
         &__title {
-            @include fontStyle(16px, 500, #0A5353);
+            @include fontStyle(16px, 500, $mainColor);
             height: 25px;
             line-height: 25px;
-            border-right: 1.5px solid #0A5353;
+            border-right: 1.5px solid $mainColor;
             padding-right: 10px;
         }
 
@@ -44,15 +44,15 @@
             width: 80px;
             text-align: center;
             transition: all .5s;
-            @include fontStyle(14px, 300, #c8c8c8);
+            @include fontStyle(14px, 300, $disbandColor);
             cursor: pointer;
 
             &:hover {
-                color: #0A5353;
+                color: $mainColor;
             }
 
             &_active {
-                color: #0A5353;
+                color: $mainColor;
                 font-weight: 500;
                 pointer-events: none;
             }
@@ -89,7 +89,7 @@
             overflow: hidden;
             
             &:hover {
-                border: 1px solid #c8c8c8;
+                border: 1px solid $disbandColor;
             }
 
             &:hover .product-item__hover {
@@ -113,7 +113,7 @@
                 top: 20px;
                 left: 50%;
                 transform: translateX(-50%);
-                @include fontStyle(17px, 300, #0A5353);
+                @include fontStyle(17px, 300, $mainColor);
                 
                 &:nth-child(2) {
                     top: 50%;
@@ -121,7 +121,7 @@
                     transform: translate(-50%, -50%);
                     width: 60px;
                     height: 60px;
-                    border: 1px solid #4b4b4b;
+                    border: 1px solid $fontColor;
                     border-radius: 50%;
                     text-align: center;
                     line-height: 60px;
@@ -154,7 +154,7 @@
         }
 
         &__title {
-            @include fontStyle(14px, 300, #4b4b4b, true);
+            @include fontStyle(14px, 300, $fontColor, true);
             display: -webkit-box;
             white-space: initial;
             -webkit-line-clamp: 2;
@@ -166,7 +166,7 @@
         }
 
         &__price {
-            @include fontStyle(16px, 300, #0A5353, true);
+            @include fontStyle(16px, 300, $mainColor, true);
             line-height: 23px;
         }
     }
@@ -183,10 +183,10 @@
             line-height: 25px;
             cursor: pointer;
             font-size: 16px;
-            color: #0A5353;
+            color: $mainColor;
 
             &_null {
-                color: #c8c8c8;
+                color: $disbandColor;
                 pointer-events: none;
             }
         }
@@ -197,10 +197,10 @@
             text-align: center;
             line-height: 25px;
             cursor: pointer;
-            @include fontStyle(16px, 500, #c8c8c8);
+            @include fontStyle(16px, 500, $disbandColor);
 
             &_active {
-                color: #0A5353;
+                color: $mainColor;
                 pointer-events: none;
             }
         }
@@ -311,7 +311,7 @@
 }
 
 ::ng-deep .swiper-button-prev {
-    color: #0A5353 !important;
+    color: $mainColor !important;
     outline: none;
 
     &:after {
@@ -321,7 +321,7 @@
 }
 
 ::ng-deep .swiper-button-next {
-    color: #0A5353 !important;
+    color: $mainColor !important;
     outline: none;
 
     &:after {

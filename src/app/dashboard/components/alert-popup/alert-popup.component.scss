@@ -23,33 +23,33 @@
         width: 100px;
         height: 30px;
         border-radius: 8px;
-        background-color: #0A5353;
+        background-color: $mainColor;
         border: none;
         outline: none;
         @include fontStyle(16px, 100, #fff);
         cursor: pointer;
 
         &:hover {
-            background-color: #107a7a;
+            background-color: $mainLightColor;
         }
 
         &:active {
-            background-color: #004242;
+            background-color: $mainDarkColor;
         }
 
         &:nth-child(1) {
             background-color: #fff;
-            border: 1px solid #0A5353;
-            color: #0A5353;
+            border: 1px solid $mainColor;
+            color: $mainColor;
             margin-right: 10px;
 
             &:hover {
-                background-color: #107a7a;
+                background-color: $mainLightColor;
                 color: #fff;
             }
     
             &:active {
-                background-color: #004242;
+                background-color: $mainDarkColor;
                 color: #fff;
             }
         }

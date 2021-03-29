@@ -1,7 +1,7 @@
 <div class="popup">
     <p class="popup-title" mat-dialog-title>{{this.data && this.data.isEdit ? '編輯商品': '新增商品'}}</p>
     <div class="popup-scrollbar-box" [formGroup]="formData">
-        <perfect-scrollbar  class="popup-scrollbar">
+        <perfect-scrollbar class="popup-scrollbar">
             <div class="popup-form">
                 <mat-form-field class="popup-form__input" floatLabel="always">
                     <input type="text" formControlName="name" matInput placeholder="商品名稱" required>

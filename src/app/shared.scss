@@ -1,9 +1,17 @@
+$mainColor: #0A5353;
+$mainLightColor: #107a7a;
+$mainDarkColor: #004242;
 
+$fontColor: #4b4b4b;
+$fontLightColor: #777777;
+$disbandColor: #c8c8c8;
+$warnColor: #da6565;
+$warnDarkColor: #d13838;
 
 /*
 * 文字style
 */
-@mixin fontStyle($size, $fontWidth, $color : #4b4b4b, $isOverFlowed : false) {
+@mixin fontStyle($size, $fontWidth, $color : $fontColor, $isOverFlowed : false) {
     font-family: 'Noto Sans TC', sans-serif;
     font-size: $size;
     font-weight: $fontWidth;

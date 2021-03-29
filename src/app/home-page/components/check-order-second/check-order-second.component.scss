@@ -30,39 +30,39 @@
 
         &:nth-child(1) {
             margin-right: 10px;
-            border: 1px solid #0A5353;
-            color: #0A5353;
+            border: 1px solid $mainColor;
+            color: $mainColor;
             box-sizing: border-box;
 
             &:hover {
-                background-color: #0A5353;
+                background-color: $mainColor;
                 color: #fff;
             }
 
             &:active {
-                border-color: #004242;
-                background-color: #004242;
+                border-color: $mainDarkColor;
+                background-color: $mainDarkColor;
                 color: #fff;
             }
         }
 
         &:nth-child(2) {
-            background-color: #0A5353;
+            background-color: $mainColor;
             color: #fff;
             
             &:hover {
-                background-color: #107a7a;
+                background-color: $mainLightColor;
             }
 
             &:active {
-                background-color: #004242;
+                background-color: $mainDarkColor;
             }
         }
     }
     
     .info-btns > .info-btn_null {
-        background-color: #c8c8c8;
-        border: 1px solid #c8c8c8;
+        background-color: $disbandColor;
+        border: 1px solid $disbandColor;
         pointer-events: none;
     }
 
