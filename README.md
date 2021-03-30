@@ -31,11 +31,11 @@ Vue版本
 
 ## 使用技術
     
- angular
- angular cli
- angular material
- RXJS
- SCSS
+ angular  
+ angular cli  
+ angular material  
+ RXJS  
+ SCSS  
  Google Fonts
 
 
