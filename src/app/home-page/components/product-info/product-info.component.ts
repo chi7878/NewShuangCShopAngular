@@ -48,7 +48,8 @@ export class ProductInfoComponent implements OnInit {
   addCart(buy?) {
     this.homeApi.postAddCart(this.productId, this.num).subscribe(data => {
       if (buy) {
-        this.router.navigate(['/checkOrder'])
+        this.router.navigate(['/checkOrder']);
+        window.scroll(0,0);
       } else {
         this.dialog.open(NoticePopupComponent, {
           height: '150px',

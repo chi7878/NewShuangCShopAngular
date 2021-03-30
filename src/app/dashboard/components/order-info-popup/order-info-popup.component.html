@@ -9,7 +9,7 @@
                             <div class="popup-img">
                                 <img [src]="product['value']['product']['imageUrl']" alt="">
                             </div>
-                            <p class="popup-item__name">{{product['value']['product']['title']}}</p>
+                            <p class="popup-item__name" [title]="product['value']['product']['title']">{{product['value']['product']['title']}}</p>
                             <p class="popup-item__text">{{product['value']['qty']}}{{product['value']['product']['unit']}}</p>
                         </li>
                     </ul>

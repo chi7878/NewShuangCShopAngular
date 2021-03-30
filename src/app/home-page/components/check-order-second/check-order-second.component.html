@@ -4,7 +4,7 @@
         <mat-form-field class="info-input" floatLabel="always">
             <mat-label>卡片號碼</mat-label>
             <input type="text" matInput formControlName="cardNumber" placeholder="∗∗∗∗-∗∗∗∗-∗∗∗∗-∗∗∗∗" required>
-            <mat-error *ngIf="formData.get('cardNumber').hasError('required')">請輸入名稱</mat-error>
+            <mat-error *ngIf="formData.get('cardNumber').hasError('required')">請輸入卡片號碼</mat-error>
             <mat-error *ngIf="formData.get('cardNumber').hasError('maxlength')">卡片號碼最多19字</mat-error>
         </mat-form-field>
         <mat-form-field class="info-input" floatLabel="always">

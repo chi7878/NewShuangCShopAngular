@@ -42,7 +42,7 @@
                             <p class="order-list__text">{{totalQty(order['products'])}}</p>
                         </li>
                         <li class="order-list__item">
-                            <p class="order-list__text">NT${{totalPrice(order['total'])| number: '1.'}}</p>
+                            <p class="order-list__text">NT${{totalPrice(order['total']) | number: '1.'}}</p>
                         </li>
                         <li class="order-list__item">
                             <div class="order-list__info" (click)="openOrderInfo(order)">
