@@ -1,27 +1,73 @@
-# NewShuangCAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+![](https://i.imgur.com/zdqNRzx.jpg?2)
 
-## Development server
+New SHUANG C 電商網站(Angular版本)
+=====================
+> 透過 Angular Cli 製作的練習電商網站
+主要在銷售手機與手機周邊配件
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## DEMO
+angular版本
+[https://chi7878.github.io/NewShuangCShopAngular/home](https://chi7878.github.io/NewShuangCShopAngular/home)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+or 
 
-## Build
+Vue版本
+[https://chi7878.github.io/NewShuangCShopVue/home](https://chi7878.github.io/NewShuangCShopVue/home)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## 網站頁面功能
+### 前台頁面功能
+* 商品展示(商品分類、單一商品介紹)
+* 購物車
+* 結帳
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Dashboard頁面功能
+* 管理者登入
+* 產品與優惠券建立
+* 商品修改資訊
+* 訂單查詢
 
-## Running end-to-end tests
+## 使用技術
+    
+ angular
+ angular cli
+ angular material
+ RXJS
+ SCSS
+ Google Fonts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## 頁面介紹
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### 前台網頁
+#### 首頁
+![](https://i.imgur.com/XHQJ3lQ.jpg)
+
+#### 商品頁面
+![](https://i.imgur.com/jjWtI0L.jpg)
+
+#### 單一商品介紹頁面
+![](https://i.imgur.com/GYob233.jpg)
+
+#### 結帳頁面
+![](https://i.imgur.com/5gPGegy.jpg)
+
+#### 登入頁面
+![](https://i.imgur.com/Vr24bvM.jpg)
+
+
+### Dashoard網頁
+#### 後台介面
+![](https://i.imgur.com/a6LBgjf.jpg)
+
+#### 新增產品
+![](https://i.imgur.com/PKkrMYL.jpg)
+
+#### 新增優惠券
+![](https://i.imgur.com/vyZlpKo.jpg)
+
+#### 訂單查詢
+![](https://i.imgur.com/PDKS6Le.jpg)

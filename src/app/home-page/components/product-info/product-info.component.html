@@ -10,8 +10,8 @@
                 <p class="info-box__feature-title">特色-</p>
                 <p class="info-box__feature-text">{{productInfo['description']}}</p>
             </div>
-            <p class="info-box__price-original">建議售價 NT${{productInfo['origin_price']}}</p>
-            <p class="info-box__price-sale">NT${{productInfo['price']}}</p>
+            <p class="info-box__price-original">建議售價 NT${{productInfo['origin_price'] | number: '1.'}}</p>
+            <p class="info-box__price-sale">NT${{productInfo['price'] | number: '1.'}}</p>
             <div class="info-box__num-box">
                 <i class="fas fa-minus" [class.info-box__add-null]="num === 1" (click)="changeNum('prev')"></i>
                 <p class="info-box__num">{{num}}</p>

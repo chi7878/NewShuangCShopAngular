@@ -110,8 +110,12 @@
                 }
             }
 
-            &:nth-child(3) {
+            &:nth-child(2) {
                 margin-top: 10px;
+            }
+
+            &:nth-child(3) {
+                margin-top: 20px;
 
                 &> p {
                     @include fontStyle(20px, 500, $fontColor, true);

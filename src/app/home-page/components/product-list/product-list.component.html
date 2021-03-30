@@ -29,7 +29,7 @@
                     </div>
                     <div class="product-item__box">
                         <p class="product-item__title">{{product['title']}}</p>
-                        <p class="product-item__price">NT${{product['price']}}</p>
+                        <p class="product-item__price">NT${{product['price'] | number: '1.'}}</p>
                     </div>
                     <div class="product-item__hover">
                         <p class="product-item__hover-text">{{product['category']}}</p>

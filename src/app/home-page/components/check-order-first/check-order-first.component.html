@@ -8,7 +8,7 @@
                 <p class="check-item__title">{{product['product']['title']}}</p>
                 <p class="check-item__num">{{product['qty']}}{{product['product']['unit']}}</p>
             </div>
-            <p class="check-item__price">NT${{product['total']}}</p>
+            <p class="check-item__price">NT${{product['total'] | number: '1.'}}</p>
             <i class="{{product['isLoaded'] ? 'fas fa-circle-notch fa-spin icn-loading' : 'far fa-trash-alt'}}" (click)="deleteCart(product)"></i>
         </li>
     </ul>
@@ -22,7 +22,7 @@
     <div class="check-price">
         <div class="check-price-box">
             <p class="check-price__text">金額</p>
-            <p class="check-price__text">NT${{total}}</p>
+            <p class="check-price__text">NT${{total | number: '1.'}}</p>
         </div>
         <div class="check-price-box">
             <p class="check-price__text">折扣</p>
@@ -30,7 +30,7 @@
         </div>
         <div class="check-price-box">
             <p class="check-price__text">總金額</p>
-            <p class="check-price__text">NT${{finalTotal}}</p>
+            <p class="check-price__text">NT${{finalTotal | number: '1.'}}</p>
         </div>
     </div>
     <p class="check-next-btn" (click)="next()">下一步</p>
